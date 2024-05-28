@@ -54,7 +54,7 @@ public class Program
         // Your one-time setup code here
     }
 
-    static void Update()
+    static void Update() 
     {
 
         // Your game code run each frame here
