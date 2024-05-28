@@ -10,6 +10,11 @@ public class Program
     static int screenHeight = 600; // Screen height
     static int targetFps = 60; // Target frames-per-second
 
+    // Player ship location and speed
+    static int shipX = 360;
+    static int shipY = 400;
+    static int shipSpeed = 5;
+
     static void Main()
     {
         // Create a window to draw to. The arguments define width and height
@@ -58,7 +63,7 @@ public class Program
 
     static void DrawShip()
     {
-        Raylib.DrawRectangle(340, 400, 80, 170, Raylib_cs.Color.Blue);
+        Raylib.DrawRectangle(shipX, shipY, 80, 170, Raylib_cs.Color.Blue); ;
     }
 
     static void DrawEnemyShips()
