@@ -80,11 +80,11 @@ public class Program
 
     static void DrawEnemyShips()
     {
-        Raylib.DrawRectangle(550, 60, 60, 60, Raylib_cs.Color.Green);
-        Raylib.DrawRectangle(450, 60, 60, 60, Raylib_cs.Color.Green);
-        Raylib.DrawRectangle(350, 60, 60, 60, Raylib_cs.Color.Green);
-        Raylib.DrawRectangle(250, 60, 60, 60, Raylib_cs.Color.Green);
-        Raylib.DrawRectangle(150, 60, 60, 60, Raylib_cs.Color.Green);
+        Raylib.DrawRectangleGradientH(550, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(450, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(350, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(250, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(150, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
     }
 
     static void DrawText()
