@@ -11,7 +11,11 @@ public class Program
     static int targetFps = 60; // Target frames-per-second
 
     // Ball or "Bullet" variables
-    
+    static Vector2 bulletPosition;
+    static Vector2 bulletSpeed = new Vector2(0, -5);
+    static int bulletRadius = 5;
+    static Raylib_cs.Color bulletColor = Raylib_cs.Color.Gold;
+    static bool bulletActive = false;
 
 
     // Player ship location and speed
