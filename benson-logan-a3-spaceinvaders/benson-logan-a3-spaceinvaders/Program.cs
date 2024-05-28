@@ -62,9 +62,9 @@ public class Program
     {
         // Your one-time setup code here
         radius = 25;
-        position = new Vector2(400, radius);
+        position = new Vector2(400, 500);
         color = Raylib_cs.Color.Gold;
-        gravity = new Vector2(0,+10);
+        gravity = new Vector2(0,-40);
         
     }
 
@@ -76,6 +76,10 @@ public class Program
         //Update Velocity
         velocity += gravity * Raylib.GetFrameTime();
         position += velocity;
+
+        // Collision detection
+        if (position.Y > Raylib.GetScreenHeight())
+            velocity.Y = -velocity.Y;
 
         //Ball / laser / bullet
         Raylib.DrawCircleV(position, radius, color);
@@ -101,11 +105,11 @@ public class Program
 
     static void DrawEnemyShips()
     {
-        Raylib.DrawRectangleGradientH(550, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(450, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(350, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(250, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(150, 60, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(550, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(450, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(350, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(250, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
+        Raylib.DrawRectangleGradientH(150, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
     }
 
     static void DrawText()
