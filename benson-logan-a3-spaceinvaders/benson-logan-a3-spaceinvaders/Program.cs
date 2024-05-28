@@ -29,7 +29,7 @@ public class Program
             // Enable drawing to the canvas (window)
             Raylib.BeginDrawing();
             // Clear the canvas with one color
-            Raylib.ClearBackground(Raylib_cs.Color.Gray);
+            Raylib.ClearBackground(Raylib_cs.Color.Black);
 
             // Your game code here. This is a function YOU define.
 
@@ -73,15 +73,15 @@ public class Program
 
     static void DrawShip()
     {
-        Raylib.DrawRectangle(shipX, shipY, 80, 170, Raylib_cs.Color.Blue); ;
+        Raylib.DrawRectangle(shipX, shipY, 80, 170, Raylib_cs.Color.RayWhite);
     }
 
     static void DrawEnemyShips()
     {
-        Raylib.DrawRectangle(550, 60, 60, 60, Raylib_cs.Color.Red);
-        Raylib.DrawRectangle(450, 60, 60, 60, Raylib_cs.Color.Red);
-        Raylib.DrawRectangle(350, 60, 60, 60, Raylib_cs.Color.Red);
-        Raylib.DrawRectangle(250, 60, 60, 60, Raylib_cs.Color.Red);
-        Raylib.DrawRectangle(150, 60, 60, 60, Raylib_cs.Color.Red);
+        Raylib.DrawRectangle(550, 60, 60, 60, Raylib_cs.Color.Green);
+        Raylib.DrawRectangle(450, 60, 60, 60, Raylib_cs.Color.Green);
+        Raylib.DrawRectangle(350, 60, 60, 60, Raylib_cs.Color.Green);
+        Raylib.DrawRectangle(250, 60, 60, 60, Raylib_cs.Color.Green);
+        Raylib.DrawRectangle(150, 60, 60, 60, Raylib_cs.Color.Green);
     }
 }
