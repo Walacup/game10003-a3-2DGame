@@ -28,7 +28,13 @@ public class Program
 
             // Your game code here. This is a function YOU define.
 
+            //Creating filler rectangle for ship
             DrawShip();
+            DrawEnemyShips();
+
+            //Draw enemy ships
+
+
 
             Update();
             // Stop drawing to the canvas, begin displaying the frame
@@ -53,5 +59,14 @@ public class Program
     static void DrawShip()
     {
         Raylib.DrawRectangle(340, 400, 80, 170, Raylib_cs.Color.Blue);
+    }
+
+    static void DrawEnemyShips()
+    {
+        Raylib.DrawRectangle(550, 60, 60, 60, Raylib_cs.Color.Red);
+        Raylib.DrawRectangle(450, 60, 60, 60, Raylib_cs.Color.Red);
+        Raylib.DrawRectangle(350, 60, 60, 60, Raylib_cs.Color.Red);
+        Raylib.DrawRectangle(250, 60, 60, 60, Raylib_cs.Color.Red);
+        Raylib.DrawRectangle(150, 60, 60, 60, Raylib_cs.Color.Red);
     }
 }
