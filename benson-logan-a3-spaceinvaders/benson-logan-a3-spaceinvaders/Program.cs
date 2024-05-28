@@ -73,7 +73,8 @@ public class Program
 
     static void DrawShip()
     {
-        Raylib.DrawRectangle(shipX, shipY, 80, 170, Raylib_cs.Color.RayWhite);
+        
+        Raylib.DrawRectangleGradientH(shipX, shipY, 80, 170, Raylib_cs.Color.Green, Raylib_cs.Color.Blue);
     }
 
     static void DrawEnemyShips()
