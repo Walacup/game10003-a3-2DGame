@@ -89,6 +89,7 @@ public class Program
 
     static void DrawText()
     {
-        Raylib.DrawText("Score:", 15, 20, 30, Raylib_cs.Color.White);
+        Raylib.DrawText("Score:", 15, 200, 30, Raylib_cs.Color.White);
+        Raylib.DrawText("Time:", 15, 250, 30, Raylib_cs.Color.White);
     }
 }
