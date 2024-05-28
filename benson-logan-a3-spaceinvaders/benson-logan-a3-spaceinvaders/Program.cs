@@ -36,6 +36,7 @@ public class Program
             //Creating filler rectangle for ship
             DrawShip();
             DrawEnemyShips();
+            DrawText();
 
             //Draw enemy ships
 
@@ -84,5 +85,10 @@ public class Program
         Raylib.DrawRectangle(350, 60, 60, 60, Raylib_cs.Color.Green);
         Raylib.DrawRectangle(250, 60, 60, 60, Raylib_cs.Color.Green);
         Raylib.DrawRectangle(150, 60, 60, 60, Raylib_cs.Color.Green);
+    }
+
+    static void DrawText()
+    {
+        Raylib.DrawText("Score:", 15, 20, 30, Raylib_cs.Color.White);
     }
 }
