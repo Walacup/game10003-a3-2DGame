@@ -11,11 +11,7 @@ public class Program
     static int targetFps = 60; // Target frames-per-second
 
     // Ball or "Bullet" variables
-    static int radius;
-    static Raylib_cs.Color color;
-    static Vector2 position;
-    static Vector2 velocity;
-    static Vector2 gravity;
+    
 
 
     // Player ship location and speed
@@ -61,10 +57,7 @@ public class Program
     static void Setup()
     {
         // Your one-time setup code here
-        radius = 25;
-        position = new Vector2(400, 500);
-        color = Raylib_cs.Color.Gold;
-        gravity = new Vector2(0,-40);
+        
         
     }
 
@@ -73,16 +66,9 @@ public class Program
 
         // Your game code run each frame here
 
-        //Update Velocity
-        velocity += gravity * Raylib.GetFrameTime();
-        position += velocity;
-
-        // Collision detection
-        if (position.Y > Raylib.GetScreenHeight())
-            velocity.Y = -velocity.Y;
-
+       
         //Ball / laser / bullet
-        Raylib.DrawCircleV(position, radius, color);
+       
         
 
         // Ship controls
@@ -114,7 +100,7 @@ public class Program
 
     static void DrawText()
     {
-        Raylib.DrawText("Score:", 15, 200, 30, Raylib_cs.Color.White);
+        Raylib.DrawText("Score: ", 15, 200, 30, Raylib_cs.Color.White);
         Raylib.DrawText("Time:", 15, 250, 30, Raylib_cs.Color.White);
     }
 }
