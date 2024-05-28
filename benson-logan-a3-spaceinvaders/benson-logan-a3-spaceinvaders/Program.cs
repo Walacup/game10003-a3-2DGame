@@ -5,7 +5,7 @@ using System.Numerics;
 public class Program
 {
     // If you need variables in the Program class (outside functions), you must mark them as static
-    static string title = "Game Title"; // Window title
+    static string title = "Space Invaders"; // Window title
     static int screenWidth = 800; // Screen width
     static int screenHeight = 600; // Screen height
     static int targetFps = 60; // Target frames-per-second
@@ -25,7 +25,11 @@ public class Program
             Raylib.BeginDrawing();
             // Clear the canvas with one color
             Raylib.ClearBackground(Raylib_cs.Color.Gray);
+
             // Your game code here. This is a function YOU define.
+
+            DrawShip();
+
             Update();
             // Stop drawing to the canvas, begin displaying the frame
             Raylib.EndDrawing();
@@ -41,6 +45,13 @@ public class Program
 
     static void Update()
     {
+
         // Your game code run each frame here
+        
+    }
+
+    static void DrawShip()
+    {
+        Raylib.DrawRectangle(340, 400, 80, 170, Raylib_cs.Color.Blue);
     }
 }
