@@ -46,12 +46,9 @@ public class Program
 
             //Creating filler rectangle for ship
             DrawShip();
-            DrawEnemyShips();
             DrawText();
 
             //Draw enemy ships
-
-
 
             Update();
             // Stop drawing to the canvas, begin displaying the frame
@@ -74,7 +71,7 @@ public class Program
         // Your game code run each frame here
 
        
-        //Ball / laser / bullet
+        //Bullet (circle)
        
         
 
@@ -96,14 +93,7 @@ public class Program
         Raylib.DrawRectangleGradientH(shipX, shipY, 80, 170, Raylib_cs.Color.Green, Raylib_cs.Color.Blue);
     }
 
-    static void DrawEnemyShips()
-    {
-        Raylib.DrawRectangleGradientH(550, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(450, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(350, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(250, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-        Raylib.DrawRectangleGradientH(150, 90, 60, 60, Raylib_cs.Color.Gold, Raylib_cs.Color.Red);
-    }
+  
 
     static void DrawText()
     {
