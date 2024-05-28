@@ -14,6 +14,9 @@ public class Program
     static int radius;
     static Raylib_cs.Color color;
     static Vector2 position;
+    static Vector2 velocity;
+    static Vector2 gravity;
+
 
     // Player ship location and speed
     static int shipX = 360;
@@ -61,6 +64,7 @@ public class Program
         radius = 25;
         position = new Vector2(400, radius);
         color = Raylib_cs.Color.Gold;
+        gravity = new Vector2(0,+10);
         
     }
 
@@ -68,6 +72,10 @@ public class Program
     {
 
         // Your game code run each frame here
+
+        //Update Velocity
+        velocity += gravity * Raylib.GetFrameTime();
+        position += velocity;
 
         //Ball / laser / bullet
         Raylib.DrawCircleV(position, radius, color);
