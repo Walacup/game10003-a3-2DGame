@@ -59,6 +59,16 @@ public class Program
 
         // Your game code run each frame here
         
+        // Ship controls
+        if (Raylib.IsKeyDown(KeyboardKey.Left) && shipX > 0)
+        {
+            shipX -= shipSpeed;
+        }
+        if (Raylib.IsKeyDown(KeyboardKey.Right) && shipX < screenWidth - 80)
+        {
+            shipX += shipSpeed;
+        }
+
     }
 
     static void DrawShip()
