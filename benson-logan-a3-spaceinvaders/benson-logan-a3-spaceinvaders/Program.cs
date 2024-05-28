@@ -17,6 +17,9 @@ public class Program
     static Raylib_cs.Color bulletColor = Raylib_cs.Color.Gold;
     static bool bulletActive = false;
 
+    // Enemy ships
+    static Raylib_cs.Rectangle[] enemyShips = new Raylib_cs.Rectangle[5];
+
 
     // Player ship location and speed
     static int shipX = 360;
