@@ -14,7 +14,7 @@ public class Program
     static Vector2 bulletPosition;
     static Vector2 bulletSpeed = new Vector2(0, -5);
     static int bulletRadius = 5;
-    static Raylib_cs.Color bulletColor = Raylib_cs.Color.Gold;
+    static Raylib_cs.Color bulletColor = Raylib_cs.Color.Red;
     static bool bulletActive = false;
 
     // Enemy properties
@@ -64,7 +64,7 @@ public class Program
 
 
         //enemy ships
-        int startX = 150;
+        int startX = 200;
         int startY = 90;
         int enemyWidth = 60;
         int enemyHeight = 60;
@@ -129,7 +129,7 @@ public class Program
     static void Draw()
     {
         // Player ship
-        Raylib.DrawRectangle(shipX, shipY, 80, 20, Raylib_cs.Color.Green);
+        Raylib.DrawRectangle(shipX, shipY, 80, 20, Raylib_cs.Color.SkyBlue);
 
 
         // Draw bullet
@@ -143,10 +143,12 @@ public class Program
         {
             if (enemyAlive[i])
             {
-                Raylib.DrawRectangleRec(enemyShips[i], Raylib_cs.Color.Yellow);
+                Raylib.DrawRectangleRec(enemyShips[i], Raylib_cs.Color.DarkBlue);
             }
         }
         // Draw score
         Raylib.DrawText($"Score: {score}", 15, 15, 30, Raylib_cs.Color.White);
+
+        Raylib.DrawText("Press SPACE to shoot", 240, 520, 30, Raylib_cs.Color.White);
     }
 }
