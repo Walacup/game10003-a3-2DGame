@@ -80,9 +80,6 @@ public class Program
     {
 
         // Your game code run each frame here
-
-       
-        //Bullet (circle)
       
 
         // Ship controls
@@ -93,6 +90,13 @@ public class Program
         if (Raylib.IsKeyDown(KeyboardKey.Right) && shipX < screenWidth - 80)
         {
             shipX += shipSpeed;
+        }
+
+        // Shooting bullets
+        if (Raylib.IsKeyPressed(KeyboardKey.Space) && !bulletActive)
+        {
+            bulletPosition = new Vector2(shipX + 40, shipY);
+            bulletActive = true;
         }
 
 
@@ -110,11 +114,5 @@ public class Program
         Raylib.DrawText("Time:", 15, 100, 30, Raylib_cs.Color.White);
     }
 
-    static void Bullet()
-    {
-        if (bulletActive)
-        {
-            Raylib.DrawCircleV(bulletPosition, bulletRadius, bulletColor);
-        }
-    }
+    
 }
