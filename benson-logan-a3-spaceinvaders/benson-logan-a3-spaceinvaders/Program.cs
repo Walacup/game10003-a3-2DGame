@@ -10,7 +10,7 @@ public class Program
     static int screenHeight = 600; // Screen height
     static int targetFps = 60; // Target frames-per-second
 
-    // Ball or "Bullet" variables
+    // Bullet variables
     static Vector2 bulletPosition;
     static Vector2 bulletSpeed = new Vector2(0, -5);
     static int bulletRadius = 5;
@@ -61,10 +61,21 @@ public class Program
     static void Setup()
     {
         // Your one-time setup code here
+       
         
-        
-    }
+        //enemy ships
+        int startX = 150;
+        int startY = 90;
+        int enemyWidth = 60;
+        int enemyHeight = 60;
+        int padding = 20;
 
+        for (int i = 0; i < enemyShips.Length; i++)
+        {
+            enemyShips[i] = new Raylib_cs.Rectangle(startX + i * (enemyWidth + padding), startY, enemyWidth, enemyHeight);
+        }
+
+    }
     static void Update() 
     {
 
@@ -72,8 +83,7 @@ public class Program
 
        
         //Bullet (circle)
-       
-        
+      
 
         // Ship controls
         if (Raylib.IsKeyDown(KeyboardKey.Left) && shipX > 0)
@@ -85,20 +95,18 @@ public class Program
             shipX += shipSpeed;
         }
 
-    }
 
+
+    }
     static void DrawShip()
     {
-        
-        Raylib.DrawRectangleGradientH(shipX, shipY, 80, 170, Raylib_cs.Color.Green, Raylib_cs.Color.Blue);
-    }
 
-  
+        Raylib.DrawRectangle(shipX, shipY, 80, 20, Raylib_cs.Color.Green);
+    }
 
     static void DrawText()
     {
-        Raylib.DrawText("Score: ", 15, 200, 30, Raylib_cs.Color.White);
-        Raylib.DrawText("Time:", 15, 250, 30, Raylib_cs.Color.White);
+        Raylib.DrawText("Score: ", 15, 50, 30, Raylib_cs.Color.White);
+        Raylib.DrawText("Time:", 15, 100, 30, Raylib_cs.Color.White);
     }
 }
-
