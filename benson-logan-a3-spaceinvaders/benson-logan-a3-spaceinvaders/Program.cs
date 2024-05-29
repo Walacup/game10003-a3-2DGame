@@ -10,21 +10,25 @@ public class Program
     static int screenHeight = 600; // Screen height
     static int targetFps = 60; // Target frames-per-second
 
-    // Bullet variables
+    // Bullet properties
     static Vector2 bulletPosition;
     static Vector2 bulletSpeed = new Vector2(0, -5);
     static int bulletRadius = 5;
     static Raylib_cs.Color bulletColor = Raylib_cs.Color.Gold;
     static bool bulletActive = false;
 
-    // Enemy ships
+    // Enemy properties
     static Raylib_cs.Rectangle[] enemyShips = new Raylib_cs.Rectangle[5];
+    static bool[] enemyAlive = new bool[5];
 
 
-    // Player ship location and speed
+    // Player ship properties
     static int shipX = 360;
     static int shipY = 400;
     static int shipSpeed = 5;
+
+    // Score
+    static int score = 0;
 
     static void Main()
     {
@@ -44,13 +48,9 @@ public class Program
 
             // Your game code here. This is a function YOU define.
 
-            //Creating filler rectangle for ship
-            DrawShip();
-            DrawText();
-
-            //Draw enemy ships
-
             Update();
+            Draw();
+ 
             // Stop drawing to the canvas, begin displaying the frame
             Raylib.EndDrawing();
         }
@@ -73,6 +73,7 @@ public class Program
         for (int i = 0; i < enemyShips.Length; i++)
         {
             enemyShips[i] = new Raylib_cs.Rectangle(startX + i * (enemyWidth + padding), startY, enemyWidth, enemyHeight);
+            enemyAlive[i] = true;
         }
 
     }
@@ -99,10 +100,33 @@ public class Program
             bulletActive = true;
         }
 
+        // Update bullet position
+        if (bulletActive)
+        {
+            bulletPosition += bulletSpeed;
 
+            // Check if bullet is off screen
+            if (bulletPosition.Y < 0)
+            {
+                bulletActive = false;
+            }
+        }
 
+        // COLLISION
+        for (int i = 0; i < enemyShips.Length; i++)
+        {
+            if (enemyAlive[i] && Raylib.CheckCollisionCircleRec(bulletPosition, bulletRadius, enemyShips[i]))
+            {
+                enemyAlive[i] = false;
+                bulletActive = false;
+                score += 100;
+                break;
+            }
+        }
     }
-    static void DrawShip()
+
+
+static void Draw()
     {
 
         Raylib.DrawRectangle(shipX, shipY, 80, 20, Raylib_cs.Color.Green);
