@@ -143,10 +143,10 @@ public class Program
         {
             if (enemyAlive[i])
             {
-                Raylib.DrawRectangleRec(enemyShips[i], Raylib_cs.Color.Red);
+                Raylib.DrawRectangleRec(enemyShips[i], Raylib_cs.Color.Yellow);
             }
         }
         // Draw score
-        Raylib.DrawText($"Score: {score}", 15, 50, 30, Raylib_cs.Color.White);
+        Raylib.DrawText($"Score: {score}", 15, 15, 30, Raylib_cs.Color.White);
     }
 }
