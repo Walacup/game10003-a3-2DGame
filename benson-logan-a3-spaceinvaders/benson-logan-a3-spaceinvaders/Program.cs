@@ -28,7 +28,7 @@ public class Program
 
     static void Main()
     {
-        // Create a window to draw to. The arguments define width and height
+        // Create a window to draw to. The arguments define width and height 
         Raylib.InitWindow(screenWidth, screenHeight, title);
         // Set the target frames-per-second (FPS)
         Raylib.SetTargetFPS(targetFps);
@@ -108,5 +108,13 @@ public class Program
     {
         Raylib.DrawText("Score: ", 15, 50, 30, Raylib_cs.Color.White);
         Raylib.DrawText("Time:", 15, 100, 30, Raylib_cs.Color.White);
+    }
+
+    static void Bullet()
+    {
+        if (bulletActive)
+        {
+            Raylib.DrawCircleV(bulletPosition, bulletRadius, bulletColor);
+        }
     }
 }
