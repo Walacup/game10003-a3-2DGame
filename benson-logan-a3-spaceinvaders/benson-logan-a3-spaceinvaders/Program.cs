@@ -50,7 +50,7 @@ public class Program
 
             Update();
             Draw();
- 
+
             // Stop drawing to the canvas, begin displaying the frame
             Raylib.EndDrawing();
         }
@@ -61,8 +61,8 @@ public class Program
     static void Setup()
     {
         // Your one-time setup code here
-       
-        
+
+
         //enemy ships
         int startX = 150;
         int startY = 90;
@@ -77,11 +77,11 @@ public class Program
         }
 
     }
-    static void Update() 
+    static void Update()
     {
 
         // Your game code run each frame here
-      
+
 
         // Ship controls
         if (Raylib.IsKeyDown(KeyboardKey.Left) && shipX > 0)
@@ -126,17 +126,27 @@ public class Program
     }
 
 
-static void Draw()
+    static void Draw()
     {
-
+        // Player ship
         Raylib.DrawRectangle(shipX, shipY, 80, 20, Raylib_cs.Color.Green);
-    }
 
-    static void DrawText()
-    {
-        Raylib.DrawText("Score: ", 15, 50, 30, Raylib_cs.Color.White);
-        Raylib.DrawText("Time:", 15, 100, 30, Raylib_cs.Color.White);
-    }
 
-    
+        // Draw bullet
+        if (bulletActive)
+        {
+            Raylib.DrawCircleV(bulletPosition, bulletRadius, bulletColor);
+        }
+
+        // Draw enemy ships
+        for (int i = 0; i < enemyShips.Length; i++)
+        {
+            if (enemyAlive[i])
+            {
+                Raylib.DrawRectangleRec(enemyShips[i], Raylib_cs.Color.Red);
+            }
+        }
+        // Draw score
+        Raylib.DrawText($"Score: {score}", 15, 50, 30, Raylib_cs.Color.White);
+    }
 }
